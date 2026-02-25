@@ -1,0 +1,136 @@
+html,
+body {
+  height: 100%;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fdfdfd;
+  text-decoration: none;
+  transform: translateY(-140%);
+  transition: transform 140ms ease;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.legal-header {
+  width: 100%;
+  padding: 18px 16px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.legal-header__inner {
+  width: min(980px, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.legal-header__brand {
+  color: #fdfdfd;
+  text-decoration: none;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.legal-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.legal-nav__link {
+  color: rgba(253, 253, 253, 0.86);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.18);
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.legal-nav__link:hover {
+  color: #fdfdfd;
+  border-color: rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.legal-nav__link:focus-visible,
+.legal-header__brand:focus-visible,
+.legal__link:focus-visible {
+  outline: 2px solid rgba(244, 199, 63, 0.9);
+  outline-offset: 3px;
+}
+
+.legal {
+  width: min(980px, 100%);
+  background: rgba(1, 6, 20, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 22px 22px;
+}
+
+.legal__head {
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 14px;
+}
+
+.legal__title {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.legal__meta {
+  margin: 8px 0 0;
+  color: rgba(253, 253, 253, 0.72);
+  font-size: 13px;
+}
+
+.legal__body p {
+  margin: 0;
+  line-height: 1.7;
+  color: rgba(253, 253, 253, 0.88);
+}
+
+.legal__body p + p {
+  margin-top: 12px;
+}
+
+.legal__link {
+  color: #f4c73f;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.legal__link:hover {
+  color: #ffd559;
+}
+
+@media (max-width: 520px) {
+  .legal {
+    padding: 18px 16px;
+    border-radius: 18px;
+  }
+
+  .legal__title {
+    font-size: 30px;
+  }
+}
+
