@@ -1,0 +1,24 @@
+{
+  "name": "app.js",
+  "version": "0.0.3",
+  "description": "simple pizza resturant for a potential client",
+  "main": "app.js",
+  "scripts": {
+    "test": "n/a"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elite-coder-2026/pizza-place.git"
+  },
+  "keywords": [
+    "git",
+    "scss",
+    "jquery@4.0"
+  ],
+  "author": "darrell parkhouse",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elite-coder-2026/pizza-place/issues"
+  },
+  "homepage": "https://github.com/elite-coder-2026/pizza-place#readme"
+}
