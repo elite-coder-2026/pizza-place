@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/elite-coder-2026/pizza-place/issues"
   },
-  "homepage": "https://github.com/elite-coder-2026/pizza-place#readme"
+  "homepage": "https://github.com/elite-coder-2026/pizza-place#readme",
+  "dependencies": {
+    "axios": "^1.13.5",
+    "jquery": "^4.0.0"
+  }
 }
