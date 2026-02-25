@@ -1,0 +1,277 @@
+/* Form layout + component styles (tokenized via reservation-form.tokens.css). */
+.reservation-form {
+  background: var(--rf-bg);
+  border-radius: var(--rf-radius);
+  box-shadow: var(--rf-shadow);
+  color: var(--rf-text);
+  display: flex;
+  flex-direction: column;
+  gap: var(--rf-gap);
+  padding: var(--rf-pad);
+  width: min(720px, 100%);
+}
+
+.reservation-form__title {
+  font-family: var(--rf-font-heading);
+  font-size: var(--rf-heading-size);
+  font-weight: 600;
+  line-height: var(--rf-heading-line);
+  margin: 0;
+}
+
+.reservation-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rf-gap);
+}
+
+.reservation-form__row {
+  display: grid;
+  gap: var(--rf-row-gap);
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 640px) {
+  .reservation-form__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rf-field {
+  background: transparent;
+  border: 1px solid var(--rf-border);
+  border-radius: var(--rf-input-radius);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--rf-field-pad-y) var(--rf-field-pad-x);
+}
+
+.rf-label {
+  color: color-mix(in srgb, var(--rf-placeholder) 55%, transparent);
+  font-family: var(--rf-font-body);
+  font-size: var(--rf-label-size);
+  font-weight: 400;
+  line-height: var(--rf-label-line);
+}
+
+.rf-control {
+  background: transparent;
+  border: 0;
+  color: var(--rf-text);
+  font-family: var(--rf-font-body);
+  font-size: var(--rf-input-size);
+  font-weight: 500;
+  line-height: var(--rf-input-line);
+  outline: none;
+  padding: 0;
+  width: 100%;
+}
+
+.rf-control::placeholder {
+  color: var(--rf-placeholder);
+  opacity: 0.9;
+}
+
+.rf-field:focus-within {
+  border-color: color-mix(in srgb, var(--rf-brand) 45%, var(--rf-border));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--rf-brand) 18%, transparent);
+}
+
+.rf-control[type="date"],
+.rf-control[type="time"] {
+  color-scheme: dark;
+}
+
+.rf-control--textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.rf-phone {
+  display: grid;
+  gap: 0;
+  grid-template-columns: 120px 1fr;
+}
+
+.rf-phone__prefix {
+  align-items: flex-start;
+  border-right: 1px solid var(--rf-border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-right: 12px;
+}
+
+.rf-phone__select-row {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.rf-phone__number {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: 12px;
+}
+
+.rf-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  background-image: none;
+  border: 0;
+  color: var(--rf-text);
+  font: inherit;
+  outline: none;
+  padding: 0;
+  width: 100%;
+}
+
+.rf-select::-ms-expand {
+  display: none;
+}
+
+.rf-icon {
+  display: block;
+  height: 18px;
+  width: 18px;
+}
+
+.rf-icon--calendar {
+  height: 20px;
+  width: 20px;
+}
+
+.rf-field--icon {
+  position: relative;
+}
+
+.rf-field--icon .rf-icon-wrap {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  padding-right: 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.rf-field--icon .rf-control {
+  padding-right: 28px;
+}
+
+/* Hide native date/time picker icons so our SVG stays 1:1. */
+.rf-control[type="date"]::-webkit-calendar-picker-indicator,
+.rf-control[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.rf-control[type="date"]::-webkit-clear-button,
+.rf-control[type="time"]::-webkit-clear-button {
+  display: none;
+}
+
+.rf-control[type="date"]::-webkit-inner-spin-button,
+.rf-control[type="time"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.reservation-form__consent {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+}
+
+.rf-checkbox {
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--rf-border);
+  border-radius: var(--rf-checkbox-radius);
+  cursor: pointer;
+  flex: 0 0 auto;
+  height: 24px;
+  margin: 2px 0 0;
+  position: relative;
+  width: 24px;
+}
+
+.rf-checkbox:checked {
+  background: var(--rf-brand);
+  border-color: color-mix(in srgb, var(--rf-brand) 65%, var(--rf-border));
+}
+
+.rf-checkbox:checked::after {
+  border-bottom: 2px solid #151515;
+  border-right: 2px solid #151515;
+  content: "";
+  height: 12px;
+  left: 8px;
+  position: absolute;
+  top: 4px;
+  transform: rotate(45deg);
+  width: 6px;
+}
+
+.reservation-form__consent-text {
+  font-family: var(--rf-font-body);
+  font-size: var(--rf-body-size);
+  line-height: var(--rf-body-line);
+  margin: 0;
+}
+
+.reservation-form__consent-text a {
+  color: var(--rf-link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.reservation-form__consent-text a:hover {
+  color: var(--rf-link-hover);
+}
+
+.reservation-form__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reservation-form__submit {
+  background: var(--rf-brand);
+  border: 0;
+  border-radius: var(--rf-radius);
+  color: #151515;
+  cursor: pointer;
+  font-family: var(--rf-font-body);
+  font-size: 16px;
+  font-weight: 500;
+  height: 48px;
+  line-height: 24px;
+  width: 100%;
+}
+
+.reservation-form__submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.reservation-form__status {
+  color: var(--rf-placeholder);
+  font-family: var(--rf-font-body);
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0;
+  min-height: 16px;
+}
+
+.reservation-form__status[data-status="error"] {
+  color: color-mix(in srgb, #ff5a5a 70%, var(--rf-text));
+}
+
+.reservation-form__status[data-status="success"] {
+  color: color-mix(in srgb, #4ce38a 70%, var(--rf-text));
+}
