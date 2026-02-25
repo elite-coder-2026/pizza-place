@@ -17,7 +17,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - { uses: "actions/checkout@v4 actions/configure-pages@v6 actions/upload-pages-artifact@v5",
+      - { uses: "actions/checkout@v4 actions/configure-pages@v6 actions/upload-pages-artifact@v5 actions/deploy-pages@v6",
 
       -with: { path: client } }
-       -uses actions/download-artifact@v4
