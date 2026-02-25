@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pizza Place</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/design-tokens.css">
+    <link rel="stylesheet" href="css/reservation-form.css">
+    <link rel="stylesheet" href="css/order.css">
+</head>
+<body>
+<main class="page">
+    <section class="page-section">
+        <section class="faq" aria-label="Frequently asked questions">
+            <h2 class="faq__title">Frequently Asked Questions</h2>
+
+            <details class="faq__item">
+                <summary class="faq__question">Do I need a reservation?</summary>
+                <div class="faq__answer">
+                    Reservations are recommended, especially for evenings and weekends. Walk-ins are welcome when space is available.
+                </div>
+            </details>
+
+            <details class="faq__item">
+                <summary class="faq__question">How do I change or cancel?</summary>
+                <div class="faq__answer">
+                    Reply to your confirmation email (once the backend is live) or call the restaurant as early as possible so we can accommodate others.
+                </div>
+            </details>
+
+            <details class="faq__item">
+                <summary class="faq__question">How many guests can I book for?</summary>
+                <div class="faq__answer">
+                    You can request any party size. For larger groups, we may follow up to confirm seating and timing.
+                </div>
+            </details>
+
+            <details class="faq__item">
+                <summary class="faq__question">Can I add dietary notes?</summary>
+                <div class="faq__answer">
+                    Yes—use the “Special Request” field for allergies, accessibility needs, or any special occasion notes.
+                </div>
+            </details>
+        </section>
+    </section>
+
+    <section class="page-section">
+        <form
+            id="reservationForm"
+            class="reservation-form"
+            data-reservation-form="true"
+            data-endpoint="/api/reservations"
+            novalidate
+        >
+        <h2 class="reservation-form__title">Reservation Form Fields</h2>
+
+        <div class="reservation-form__fields">
+            <div class="rf-field">
+                <label class="rf-label" for="rf-name">Full name</label>
+                <input
+                    id="rf-name"
+                    class="rf-control"
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    placeholder="Enter your full name."
+                    required
+                >
+            </div>
+
+            <div class="reservation-form__row">
+                <div class="rf-field">
+                    <label class="rf-label" for="rf-email">Email</label>
+                    <input
+                        id="rf-email"
+                        class="rf-control"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        placeholder="We’ll send your confirmation here."
+                        required
+                    >
+                </div>
+
+                <div class="rf-field rf-phone">
+                    <div class="rf-phone__prefix">
+                        <label class="rf-label" for="rf-country">Phone</label>
+                        <div class="rf-phone__select-row">
+                            <select id="rf-country" class="rf-select" name="phone_country" aria-label="Country code">
+                                <option value="+1" selected>+1</option>
+                                <option value="+44">+44</option>
+                                <option value="+61">+61</option>
+                            </select>
+                            <img src="img/icon-chevron-down.svg" alt="" class="rf-icon" aria-hidden="true">
+                        </div>
+                    </div>
+                    <div class="rf-phone__number">
+                        <label class="rf-label" for="rf-phone">Phone Number</label>
+                        <input
+                            id="rf-phone"
+                            class="rf-control"
+                            name="phone"
+                            type="tel"
+                            autocomplete="tel"
+                            placeholder="So we can reach you if needed."
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div class="reservation-form__row">
+                <div class="rf-field rf-field--icon">
+                    <label class="rf-label" for="rf-date">Reservation Date</label>
+                    <input
+                        id="rf-date"
+                        class="rf-control"
+                        name="reservation_date"
+                        type="date"
+                        placeholder="Select the date of your visit."
+                    >
+                    <span class="rf-icon-wrap" aria-hidden="true">
+                        <img src="img/icon-calendar.svg" alt="" class="rf-icon rf-icon--calendar">
+                    </span>
+                </div>
+
+                <div class="rf-field rf-field--icon">
+                    <label class="rf-label" for="rf-time">Reservation Time</label>
+                    <input
+                        id="rf-time"
+                        class="rf-control"
+                        name="reservation_time"
+                        type="time"
+                        placeholder="Choose your preferred time."
+                    >
+                    <span class="rf-icon-wrap" aria-hidden="true">
+                        <img src="img/icon-calendar.svg" alt="" class="rf-icon rf-icon--calendar">
+                    </span>
+                </div>
+            </div>
+
+            <div class="rf-field">
+                <label class="rf-label" for="rf-guests">Number of Guests</label>
+                <input
+                    id="rf-guests"
+                    class="rf-control"
+                    name="guests"
+                    type="number"
+                    min="1"
+                    placeholder="Let us know how many are dining."
+                >
+            </div>
+
+            <div class="rf-field">
+                <label class="rf-label" for="rf-message">Special Request</label>
+                <textarea
+                    id="rf-message"
+                    class="rf-control rf-control--textarea"
+                    name="message"
+                    placeholder="Input text here"
+                    required
+                ></textarea>
+            </div>
+
+            <div class="reservation-form__consent">
+                <label class="rf-label" for="rf-consent">Consent</label>
+                <input id="rf-consent" class="rf-checkbox" type="checkbox" name="consent" required>
+                <p class="reservation-form__consent-text">
+                    By checking the box you agree to our
+                    <a href="#" rel="noopener">Terms of Service</a>
+                    and
+                    <a href="#" rel="noopener">Privacy Policy</a>.
+                </p>
+            </div>
+
+            <div class="reservation-form__actions">
+                <button class="reservation-form__submit" type="submit">Send Message</button>
+                <p data-contact-status class="reservation-form__status" aria-live="polite"></p>
+            </div>
+        </div>
+        </form>
+    </section>
+
+    <section class="page-section">
+        <form
+            id="contactForm"
+            class="contact"
+            data-contact-form="true"
+            data-endpoint="/api/contact"
+            novalidate
+        >
+            <h2 class="contact__title">Contact Us</h2>
+
+            <div class="contact__fields">
+                <div class="contact__field">
+                    <label class="contact__label" for="contact-name">Name</label>
+                    <input id="contact-name" class="contact__input" name="name" type="text" autocomplete="name" required>
+                </div>
+
+                <div class="contact__field">
+                    <label class="contact__label" for="contact-email">Email</label>
+                    <input id="contact-email" class="contact__input" name="email" type="email" autocomplete="email" required>
+                </div>
+
+                <div class="contact__field">
+                    <label class="contact__label" for="contact-message">Message</label>
+                    <textarea id="contact-message" class="contact__input contact__input--textarea" name="message" rows="4" required></textarea>
+                </div>
+
+                <div class="contact__hp" aria-hidden="true">
+                    <label for="contact-hp">Leave this field blank</label>
+                    <input id="contact-hp" name="_hp" type="text" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div class="contact__actions">
+                    <button class="contact__submit" type="submit">Send message</button>
+                    <p class="contact__status" data-contact-status aria-live="polite"></p>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section class="page-section">
+        <form id="orderForm" class="order" data-order-form="true" data-endpoint="/api/orders" novalidate>
+            <header class="order__header">
+                <h2 class="order__title">Order Pizza</h2>
+                <p class="order__subtitle">Build your pizzas, then send the order.</p>
+            </header>
+
+            <section class="order__section">
+                <div class="order__section-title">Your Pizzas (<span data-order-count>0</span>)</div>
+
+                <div data-order-items class="order__items"></div>
+
+                <div class="order__row">
+                    <button class="order__btn order__btn--secondary" data-add-item type="button">Add another pizza</button>
+                    <div class="order__total">
+                        Total: <strong data-order-total>$0.00</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="order__section">
+                <div class="order__grid2">
+                    <div class="order__field">
+                        <label class="order__label" for="order_customer_name">Name</label>
+                        <input class="order__input" id="order_customer_name" name="customer_name" type="text" autocomplete="name" required>
+                    </div>
+                    <div class="order__field">
+                        <label class="order__label" for="order_email">Email</label>
+                        <input class="order__input" id="order_email" name="email" type="email" autocomplete="email" required>
+                    </div>
+                </div>
+
+                <div class="order__grid2">
+                    <div class="order__field">
+                        <label class="order__label" for="order_phone">Phone</label>
+                        <input class="order__input" id="order_phone" name="phone" type="tel" autocomplete="tel">
+                    </div>
+                    <div class="order__field">
+                        <label class="order__label" for="order_fulfillment">Fulfillment</label>
+                        <select class="order__input" id="order_fulfillment" name="fulfillment" required>
+                            <option value="pickup" selected>Pickup</option>
+                            <option value="delivery">Delivery</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="order__grid2" data-delivery-only style="display:none;">
+                    <div class="order__field">
+                        <label class="order__label" for="order_address_1">Address</label>
+                        <input class="order__input" id="order_address_1" name="address_1" type="text" autocomplete="address-line1" data-delivery-required>
+                    </div>
+                    <div class="order__field">
+                        <label class="order__label" for="order_city">City</label>
+                        <input class="order__input" id="order_city" name="city" type="text" autocomplete="address-level2" data-delivery-required>
+                    </div>
+                    <div class="order__field">
+                        <label class="order__label" for="order_zip">ZIP</label>
+                        <input class="order__input" id="order_zip" name="zip" type="text" autocomplete="postal-code" data-delivery-required>
+                    </div>
+                </div>
+            </section>
+
+            <section class="order__section">
+                <div class="order__field">
+                    <label class="order__label" for="order_notes">Notes</label>
+                    <textarea class="order__input order__input--textarea" id="order_notes" name="notes" rows="3" placeholder="Allergies, no-contact delivery, etc."></textarea>
+                </div>
+
+                <div class="order__consent">
+                    <input id="order_terms" type="checkbox" name="terms" required>
+                    <label for="order_terms">I agree to the terms.</label>
+                </div>
+
+                <div class="order__actions">
+                    <button class="order__btn" type="submit">Place order</button>
+                    <p class="order__status" data-order-status aria-live="polite"></p>
+                </div>
+            </section>
+
+            <template id="orderItemTemplate">
+                <div class="order-item" data-order-item>
+                    <div class="order-item__top">
+                        <div class="order-item__title">Pizza</div>
+                        <button class="order-item__remove" data-remove-item type="button">Remove</button>
+                    </div>
+
+                    <div class="order-item__grid">
+                        <div class="order__field">
+                            <label for="pizza_size" class="order__label">Size</label>
+                            <select id="pizza_size" class="order__input" name="pizza_size">
+                                <option value="sm">Small</option>
+                                <option value="md" selected>Medium</option>
+                                <option value="lg">Large</option>
+                            </select>
+                        </div>
+
+                        <div class="order__field">
+                            <label for="order__label" class="order__label">Crust</label>
+                            <select id="order__label" class="order__input" name="pizza_crust">
+                                <option value="regular" selected>Regular</option>
+                                <option value="thin">Thin</option>
+                                <option value="gluten_free">Gluten free</option>
+                            </select>
+                        </div>
+
+                        <div class="order__field">
+                            <label for="order__qty" class="order__label">Qty</label>
+                            <input id="order__qty" class="order__input" name="pizza_qty" type="number" min="1" value="1">
+                        </div>
+                    </div>
+
+                    <fieldset class="order-item__toppings">
+                        <legend class="order-item__legend">Toppings</legend>
+                        <label class="order-item__check"><input type="checkbox" name="pizza_toppings[]" value="pepperoni"> Pepperoni</label>
+                        <label class="order-item__check"><input type="checkbox" name="pizza_toppings[]" value="mushrooms"> Mushrooms</label>
+                        <label class="order-item__check"><input type="checkbox" name="pizza_toppings[]" value="onions"> Onions</label>
+                        <label class="order-item__check"><input type="checkbox" name="pizza_toppings[]" value="olives"> Olives</label>
+                        <label class="order-item__check"><input type="checkbox" name="pizza_toppings[]" value="extra_cheese"> Extra cheese</label>
+                    </fieldset>
+                </div>
+            </template>
+        </form>
+    </section>
+</main>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/axios/dist/axios.min.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/contact-form.js"></script>
+<script src="js/reservation-form.js"></script>
+<script src="js/order-form.js"></script>
+</body>
+</html>
