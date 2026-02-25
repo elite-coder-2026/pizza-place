@@ -4,7 +4,9 @@
   "description": "simple pizza resturant for a potential client",
   "main": "app.js",
   "scripts": {
+    "build:css": "sass --no-source-map scss:css",
     "diagram": "node scripts/render-mermaid.mjs",
+    "watch:css": "sass --watch scss:css",
     "test": "n/a"
   },
   "repository": {
@@ -28,6 +30,7 @@
     "jquery": "^4.0.0"
   },
   "devDependencies": {
-    "@mermaid-js/mermaid-cli": "^11.12.0"
+    "@mermaid-js/mermaid-cli": "^11.12.0",
+    "sass": "^1.77.0"
   }
 }
