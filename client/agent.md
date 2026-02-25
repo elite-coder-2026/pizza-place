@@ -1,12 +1,12 @@
-This repo is a small static web app (HTML/CSS/SCSS/JS) located in `client/`.
-Goal: ship clean, readable UI with minimal, non-redundant styles.
+This repo is a small static web app (HTML/CSS/JS) located in `client/` (plus some jQuery usage).
+Goal: ship clean, readable UI with minimal, non-redundant styles and minimal back-and-forth.
 
 ## Quick Commands (bash)
 ### Navigation / search
 - `ls -la` — list files
 - `cd client` — work in the app root
 - `rg "pattern" client` — ripgrep search (preferred over `grep`)
-- `rg --files client | rg "menu|cms"` — find files by name
+- `rg --files client | rg "menu|order|cms"` — find files by name
 
 ### Git
 - `git status --porcelain`
@@ -16,17 +16,19 @@ Goal: ship clean, readable UI with minimal, non-redundant styles.
 - `git add -A && git commit -m "message"`
 - `git push -u origin HEAD`
 
-### Node (if needed)
-- `npm install`
-- `npm run dev` / `npm run build` (only if present in `package.json`)
+### Node (client)
+- `cd client && npm install`
+- `cd client && npm run diagram` — renders Mermaid docs (see `client/docs/diagrams`)
 - `node --check client/js/some-file.js`
 
 ## Project Structure
 - `client/` — app root
 - `client/index.html` — home
 - `client/menu.html` — menu page
-- `client/cms-test.html` — cms UI test page
-- `client/css/` — styles (prefer SCSS source in `client/scss/` if applicable)
+- `client/order.html` — order page
+- `client/cms-test.html` — CMS UI test page
+- `client/css/` — source styles (current approach)
+- `client/css/design-tokens.css` — shared tokens (preferred for shared values)
 - `client/js/` — vanilla JS
 
 ## UI + Content Guidelines
@@ -34,7 +36,7 @@ Goal: ship clean, readable UI with minimal, non-redundant styles.
 - Match the design: spacing, type scale, and alignment matter more than “extra features”.
 - Mobile-first responsive behavior:
     - Stack columns below ~900px
-    - Avoid horizontal scroll
+    - Avoid horizontal scroll (check 375 / 768 / 1024 / 1440 widths)
 - Prefer accessible patterns:
     - visible focus (`:focus-visible`)
     - labels for form controls
@@ -46,14 +48,14 @@ Goal: ship clean, readable UI with minimal, non-redundant styles.
 - Descriptions: 1–2 sentences max
 - Buttons: verb + noun (e.g., “Save Settings”, “View Menu”)
 
-## SCSS Rules (strict)
-- Write SCSS only (no inline styles, no duplicate CSS blocks).
-- BEM naming: `.block__element--modifier`
-- Nesting max depth: 2 levels.
+## CSS/SCSS Rules (strict)
+- No inline styles; no duplicate CSS blocks.
+- Current repo is CSS-first: prefer updating existing files in `client/css/`.
+- If SCSS is introduced later, keep nesting max depth to 2 levels.
+- BEM naming for styling classes: `.block__element--modifier`
 - Prefer reuse:
-    - Tokens: `$color-*`, `$space-*`, `$radius-*`, `$shadow-*`, `$font-*`
-    - Shared patterns via mixins/placeholders:
-        - `%card`, `%pill`, `%btn`, `%input`
+    - First choice: values in `client/css/design-tokens.css`
+    - If you need a new shared value/pattern, add it to the canonical shared location (don’t create per-file “one-off tokens”).
 - Don’t restate defaults; don’t add speculative states.
 - Avoid increasing specificity; no IDs in selectors.
 - If a style already exists, extend/refactor—don’t duplicate.
@@ -62,7 +64,8 @@ Goal: ship clean, readable UI with minimal, non-redundant styles.
 ### HTML
 - Semantic tags (`header`, `nav`, `main`, `section`, `footer`)
 - Keep markup minimal; avoid deeply nested wrappers
-- Use `data-*` attributes for JS hooks, not classes
+- Use `data-*` attributes for JS hooks, not styling classes
+    - Tie-breaker: classes (BEM) are for styling; `data-*` is for JS selectors; never style off `data-*`.
 
 ### JS
 - Vanilla JS, no framework assumptions.
@@ -70,7 +73,7 @@ Goal: ship clean, readable UI with minimal, non-redundant styles.
     - event delegation for lists
     - small pure helpers
     - `const` by default
-- No global variables; wrap modules in an IIFE or ES module.
+- No global variables; prefer wrapping page modules in an IIFE (consistent with classic script tags).
 
 ## State Management
 - Keep state local to the page/module:
@@ -115,6 +118,11 @@ Use this in PR descriptions:
 
 ### Testing
 - How you verified (browser, viewport sizes, steps)
+    - Quick checklist:
+        - No console errors on load
+        - Keyboard nav works + focus visible
+        - Forms usable with labels + validation
+        - Responsive at 375 / 768 / 1024 / 1440
 
 ### Notes
 - Tradeoffs, follow-ups, known issues
