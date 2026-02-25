@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News • Platieu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/news-feed.css">
+</head>
+<body class="news-feed-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <nav class="nav" aria-label="Primary">
+      <div class="container nav__inner">
+        <a class="brand" href="index.html" aria-label="Platieu home">
+          <img
+            class="brand__mark"
+            src="img/menu/logo-mark.svg"
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+          >
+          <span class="brand__name">Platieu</span>
+        </a>
+
+        <div class="nav__pill" role="list">
+          <a class="nav__link" role="listitem" href="index.html">Home</a>
+          <a class="nav__link" role="listitem" href="menu.html">Menu</a>
+          <a class="nav__link nav__link--active" role="listitem" href="news-feed.html" aria-current="page">News</a>
+        </div>
+
+        <a class="btn btn--primary nav__cta" href="order.html">Reserve a Seat</a>
+      </div>
+    </nav>
+
+    <div class="container hero__content">
+      <img
+        class="hero__flourish"
+        src="img/menu/flourish.svg"
+        alt=""
+        aria-hidden="true"
+        loading="eager"
+      >
+      <p class="hero__kicker">From the Kitchen</p>
+      <h1 class="hero__title">News & Updates</h1>
+      <p class="hero__desc">
+        Events, seasonal menus, and small stories from the team — all in one place.
+      </p>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section news" aria-labelledby="newsTitle">
+      <div class="container">
+        <header class="section__head section__head--stack">
+          <h2 class="section__title" id="newsTitle">Latest posts</h2>
+          <p class="section__subtitle">
+            Filter by topic, then open a post to read the full update.
+          </p>
+
+          <div class="segmented" role="tablist" aria-label="News categories">
+            <button class="segmented__btn is-active" type="button" role="tab" aria-selected="true" data-filter="all">All</button>
+            <button class="segmented__btn" type="button" role="tab" aria-selected="false" data-filter="events">Events</button>
+            <button class="segmented__btn" type="button" role="tab" aria-selected="false" data-filter="kitchen">Kitchen</button>
+            <button class="segmented__btn" type="button" role="tab" aria-selected="false" data-filter="press">Press</button>
+          </div>
+        </header>
+
+        <div class="news-grid" aria-label="News feed">
+          <article class="news-card" data-category="events">
+            <img class="news-card__img" src="img/home/thumb-3.png" alt="A warm dining room with guests seated" loading="lazy">
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="pill">Event</span>
+                <time class="news-card__date" datetime="2026-02-22">Feb 22, 2026</time>
+              </div>
+              <h3 class="news-card__title">Live jazz on Sundays</h3>
+              <p class="news-card__desc">A small trio, a shorter set, and the same quiet service. Reservations recommended.</p>
+              <a class="news-card__link" href="#top">Read more</a>
+            </div>
+          </article>
+
+          <article class="news-card" data-category="kitchen">
+            <img class="news-card__img" src="img/home/dish-feature.png" alt="A plated dish with sauce and garnish" loading="lazy">
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="pill pill--gold">Kitchen</span>
+                <time class="news-card__date" datetime="2026-02-18">Feb 18, 2026</time>
+              </div>
+              <h3 class="news-card__title">Winter tasting menu: second seating added</h3>
+              <p class="news-card__desc">We added a limited second seating on Fridays to make room for more regulars.</p>
+              <a class="news-card__link" href="#top">Read more</a>
+            </div>
+          </article>
+
+          <article class="news-card" data-category="press">
+            <img class="news-card__img" src="img/home/thumb-2.png" alt="Fresh ingredients on a prep counter" loading="lazy">
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="pill pill--ink">Press</span>
+                <time class="news-card__date" datetime="2026-02-10">Feb 10, 2026</time>
+              </div>
+              <h3 class="news-card__title">Platieu featured in Market & Table</h3>
+              <p class="news-card__desc">A short interview about sourcing, technique, and why we keep the menu focused.</p>
+              <a class="news-card__link" href="#top">Read more</a>
+            </div>
+          </article>
+
+          <article class="news-card" data-category="events">
+            <img class="news-card__img" src="img/home/about-2.png" alt="A dining table set with glassware" loading="lazy">
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="pill">Event</span>
+                <time class="news-card__date" datetime="2026-01-28">Jan 28, 2026</time>
+              </div>
+              <h3 class="news-card__title">Chef’s table: a six-seat monthly dinner</h3>
+              <p class="news-card__desc">A fixed menu, slower pacing, and a few off-menu bites built for pairing.</p>
+              <a class="news-card__link" href="#top">Read more</a>
+            </div>
+          </article>
+
+          <article class="news-card" data-category="kitchen">
+            <img class="news-card__img" src="img/menu/steak.png" alt="Steak frites served on a plate" loading="lazy">
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="pill pill--gold">Kitchen</span>
+                <time class="news-card__date" datetime="2026-01-16">Jan 16, 2026</time>
+              </div>
+              <h3 class="news-card__title">Sauce prep: the quiet work behind the plate</h3>
+              <p class="news-card__desc">A quick look at the small batch sauces that make the classics feel alive.</p>
+              <a class="news-card__link" href="#top">Read more</a>
+            </div>
+          </article>
+
+          <article class="news-card" data-category="press">
+            <img class="news-card__img" src="img/home/about-1.png" alt="Hands placing a dish on a table" loading="lazy">
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="pill pill--ink">Press</span>
+                <time class="news-card__date" datetime="2025-12-20">Dec 20, 2025</time>
+              </div>
+              <h3 class="news-card__title">Holiday hours & a note of thanks</h3>
+              <p class="news-card__desc">We’re closing early on Dec 24 and Dec 31. Thanks for another beautiful year.</p>
+              <a class="news-card__link" href="#top">Read more</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" aria-label="Footer">
+    <div class="container footer__inner">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand brand--footer" href="index.html" aria-label="Platieu home">
+            <img class="brand__mark" src="img/menu/logo-mark.svg" alt="" aria-hidden="true" loading="lazy">
+            <span class="brand__name">Platieu</span>
+          </a>
+          <p class="footer__fine">Seasonal ingredients, classic technique, and unhurried hospitality.</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer links">
+          <div class="footer__head">Explore</div>
+          <a class="footer__link" href="menu.html">Menu</a>
+          <a class="footer__link" href="order.html">Reserve</a>
+          <a class="footer__link" href="news-feed.html" aria-current="page">News</a>
+        </nav>
+
+        <div class="footer__nav" aria-label="Contact">
+          <div class="footer__head">Contact</div>
+          <a class="footer__link" href="tel:+10000000000">+1 (000) 000-0000</a>
+          <a class="footer__link" href="mailto:hello@platieu.example">hello@platieu.example</a>
+          <div class="footer__fine">Mon–Sun: 5pm–11pm</div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__copyright">© <span id="year"></span> Platieu. All rights reserved.</div>
+        <a class="footer__back" href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/news-feed.js"></script>
+</body>
+</html>
