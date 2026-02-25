@@ -1,0 +1,37 @@
+.reservation-form {
+    /* Form-only tokens extracted from Figma (node 12127:5883). */
+    --rf-bg: #010614;
+    --rf-text: #fdfdfd;
+    --rf-placeholder: #d7d7d7;
+    --rf-border: #444444;
+    --rf-border-subtle: #242424;
+    --rf-brand: #f4c73f;
+    --rf-link: #d17c0e;
+    --rf-link-hover: #ae590f;
+    --rf-icon-primary: #fdfdfd;
+    --rf-icon-secondary: #ededed;
+
+    --rf-radius: 24px;
+    --rf-input-radius: 12px;
+    --rf-checkbox-radius: 4px;
+
+    --rf-pad: 24px;
+    --rf-gap: 24px;
+    --rf-row-gap: 16px;
+    --rf-field-pad-x: 12px;
+    --rf-field-pad-y: 10px;
+
+    --rf-shadow: 0px 20px 24px -4px rgba(0, 0, 0, 0.08), 0px 8px 8px -4px rgba(0, 0, 0, 0.03);
+
+    --rf-font-heading: "Cormorant Garamond", serif;
+    --rf-font-body: "Lora", serif;
+    --rf-heading-size: 32px;
+    --rf-heading-line: 1.15;
+    --rf-label-size: 12px;
+    --rf-label-line: 16px;
+    --rf-input-size: 14px;
+    --rf-input-line: 22px;
+    --rf-body-size: 16px;
+    --rf-body-line: 24px;
+}
+
