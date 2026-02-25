@@ -1,0 +1,25 @@
+# Diff Summary
+
+Date : 2026-02-25 00:51:45
+
+Directory /Users/darrellparkhouse/development/pizza-place
+
+Total : 2 files,  147 codes, 7 comments, 28 blanks, all 182 lines
+
+[Summary](results.md) / [Details](details.md) / Diff Summary / [Diff Details](diff-details.md)
+
+## Languages
+| language | files | code | comment | blank | total |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| JavaScript | 1 | 129 | 7 | 24 | 160 |
+| YAML | 1 | 18 | 0 | 4 | 22 |
+
+## Directories
+| path | files | code | comment | blank | total |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| . | 2 | 147 | 7 | 28 | 182 |
+| client | 2 | 147 | 7 | 28 | 182 |
+| client (Files) | 1 | 18 | 0 | 4 | 22 |
+| client/scripts | 1 | 129 | 7 | 24 | 160 |
+
+[Summary](results.md) / [Details](details.md) / Diff Summary / [Diff Details](diff-details.md)
