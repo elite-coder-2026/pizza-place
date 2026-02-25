@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu • Platieu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/menu.css">
+</head>
+<body class="menu-page">
+  <header class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <nav class="nav" aria-label="Primary">
+      <div class="container nav__inner">
+        <a class="brand" href="index.html" aria-label="Platieu home">
+          <img
+            class="brand__mark"
+            src="img/menu/logo-mark.svg"
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+          >
+          <span class="brand__name">Platieu</span>
+        </a>
+
+        <div class="nav__pill" role="list">
+          <a class="nav__link" role="listitem" href="index.html">Home</a>
+          <a class="nav__link nav__link--active" role="listitem" href="menu.html" aria-current="page">Menu</a>
+          <a class="nav__link" role="listitem" href="#story">Our Story</a>
+          <a class="nav__link" role="listitem" href="#location">Location</a>
+          <a class="nav__link" role="listitem" href="#news">News</a>
+        </div>
+
+        <a class="btn btn--primary nav__cta" href="order.html">Reserve a Seat</a>
+      </div>
+    </nav>
+
+    <div class="container hero__content">
+      <img
+        class="hero__flourish"
+        src="img/menu/flourish.svg"
+        alt=""
+        aria-hidden="true"
+        loading="eager"
+      >
+      <h1 class="hero__title">Discover Our Curated Culinary Selection</h1>
+      <p class="hero__desc">
+        From bright starters to satisfying mains, explore refined plates crafted with seasonal ingredients and classic technique.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section menu" aria-labelledby="menuTitle">
+      <div class="container">
+        <header class="section__head">
+          <h2 class="section__title" id="menuTitle">Today Menu</h2>
+
+          <div class="segmented" role="tablist" aria-label="Menu categories">
+            <button class="segmented__btn is-active" type="button" role="tab" aria-selected="true" data-filter="all">All Menu</button>
+            <button class="segmented__btn" type="button" role="tab" aria-selected="false" data-filter="appetizer">Appetizer</button>
+            <button class="segmented__btn" type="button" role="tab" aria-selected="false" data-filter="main">Main Course</button>
+            <button class="segmented__btn" type="button" role="tab" aria-selected="false" data-filter="dessert">Dessert</button>
+            <button class="segmented__btn" type="button" role="tab" aria-selected="false" data-filter="beverage">Beverage</button>
+          </div>
+        </header>
+
+        <div class="menu-grid" data-menu-grid>
+          <article class="menu-item" data-category="appetizer">
+            <img class="menu-item__img" src="img/menu/wings-1.png" alt="Buffalo wings">
+            <div class="menu-item__body">
+              <div class="menu-item__pill">Recommended</div>
+              <div class="menu-item__line">
+                <h3 class="menu-item__name">Crispy Wings Provençale</h3>
+                <span class="menu-item__dots" aria-hidden="true"></span>
+                <div class="menu-item__price">$14</div>
+              </div>
+              <p class="menu-item__desc">Herb-brined wings, lemon aioli, and a warm pepper glaze.</p>
+            </div>
+          </article>
+
+          <article class="menu-item" data-category="appetizer">
+            <img class="menu-item__img" src="img/menu/crab-cakes.png" alt="Crab cakes">
+            <div class="menu-item__body">
+              <div class="menu-item__pill">Recommended</div>
+              <div class="menu-item__line">
+                <h3 class="menu-item__name">Mini Crab Cakes</h3>
+                <span class="menu-item__dots" aria-hidden="true"></span>
+                <div class="menu-item__price">$16</div>
+              </div>
+              <p class="menu-item__desc">Delicate crab, citrus remoulade, and shaved fennel salad.</p>
+            </div>
+          </article>
+
+          <article class="menu-item" data-category="appetizer">
+            <img class="menu-item__img" src="img/menu/wings-2.png" alt="BBQ wings top view">
+            <div class="menu-item__body">
+              <div class="menu-item__pill">Recommended</div>
+              <div class="menu-item__line">
+                <h3 class="menu-item__name">Charred BBQ Chicken Wings</h3>
+                <span class="menu-item__dots" aria-hidden="true"></span>
+                <div class="menu-item__price">$15</div>
+              </div>
+              <p class="menu-item__desc">Smoky lacquer, pickled onions, and toasted sesame.</p>
+            </div>
+          </article>
+
+          <article class="menu-item" data-category="main">
+            <img class="menu-item__img" src="img/menu/steak.png" alt="Seared steak">
+            <div class="menu-item__body">
+              <div class="menu-item__pill">Recommended</div>
+              <div class="menu-item__line">
+                <h3 class="menu-item__name">Steak Frites</h3>
+                <span class="menu-item__dots" aria-hidden="true"></span>
+                <div class="menu-item__price">$34</div>
+              </div>
+              <p class="menu-item__desc">Peppercorn jus, crispy frites, and house salad.</p>
+            </div>
+          </article>
+
+          <article class="menu-item" data-category="main">
+            <img class="menu-item__img" src="img/menu/seafood.png" alt="Seafood plate">
+            <div class="menu-item__body">
+              <div class="menu-item__pill">Recommended</div>
+              <div class="menu-item__line">
+                <h3 class="menu-item__name">Seared Salmon Niçoise</h3>
+                <span class="menu-item__dots" aria-hidden="true"></span>
+                <div class="menu-item__price">$28</div>
+              </div>
+              <p class="menu-item__desc">Olives, soft egg, green beans, and Dijon vinaigrette.</p>
+            </div>
+          </article>
+
+          <article class="menu-item" data-category="main">
+            <img class="menu-item__img" src="img/menu/pasta.png" alt="Pasta dish">
+            <div class="menu-item__body">
+              <div class="menu-item__pill">Recommended</div>
+              <div class="menu-item__line">
+                <h3 class="menu-item__name">Truffle Tagliatelle</h3>
+                <span class="menu-item__dots" aria-hidden="true"></span>
+                <div class="menu-item__price">$26</div>
+              </div>
+              <p class="menu-item__desc">Creamy parmesan, shaved truffle, and cracked black pepper.</p>
+            </div>
+          </article>
+
+          <article class="menu-item" data-category="dessert">
+            <img class="menu-item__img" src="img/menu/hero.png" alt="Dessert">
+            <div class="menu-item__body">
+              <div class="menu-item__pill">Recommended</div>
+              <div class="menu-item__line">
+                <h3 class="menu-item__name">Crème Brûlée</h3>
+                <span class="menu-item__dots" aria-hidden="true"></span>
+                <div class="menu-item__price">$12</div>
+              </div>
+              <p class="menu-item__desc">Vanilla bean custard with a crisp caramelized top.</p>
+            </div>
+          </article>
+
+          <article class="menu-item" data-category="dessert">
+            <img class="menu-item__img" src="img/menu/hero.png" alt="Dessert">
+            <div class="menu-item__body">
+              <div class="menu-item__pill">Recommended</div>
+              <div class="menu-item__line">
+                <h3 class="menu-item__name">Chocolate Fondant</h3>
+                <span class="menu-item__dots" aria-hidden="true"></span>
+                <div class="menu-item__price">$13</div>
+              </div>
+              <p class="menu-item__desc">Molten center cake with crème fraîche and berries.</p>
+            </div>
+          </article>
+
+          <article class="menu-item" data-category="beverage">
+            <img class="menu-item__img" src="img/menu/hero.png" alt="Beverage">
+            <div class="menu-item__body">
+              <div class="menu-item__pill">Recommended</div>
+              <div class="menu-item__line">
+                <h3 class="menu-item__name">Sparkling Citrus Spritz</h3>
+                <span class="menu-item__dots" aria-hidden="true"></span>
+                <div class="menu-item__price">$10</div>
+              </div>
+              <p class="menu-item__desc">Bright citrus, botanicals, and a fine bubbly finish.</p>
+            </div>
+          </article>
+
+          <article class="menu-item" data-category="beverage">
+            <img class="menu-item__img" src="img/menu/hero.png" alt="Beverage">
+            <div class="menu-item__body">
+              <div class="menu-item__pill">Recommended</div>
+              <div class="menu-item__line">
+                <h3 class="menu-item__name">House Espresso</h3>
+                <span class="menu-item__dots" aria-hidden="true"></span>
+                <div class="menu-item__price">$5</div>
+              </div>
+              <p class="menu-item__desc">Rich crema, balanced roast, served short and hot.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials" aria-labelledby="testTitle">
+      <div class="container">
+        <header class="section__head section__head--stack">
+          <h2 class="section__title" id="testTitle">Real Talk From Real Foodies</h2>
+          <p class="section__subtitle">
+            Unfiltered favorites from guests who love a well-made plate and an even better night out.
+          </p>
+        </header>
+
+        <div class="t-slider" data-testimonials>
+          <div class="t-track" data-testimonials-track>
+            <article class="t-card is-active">
+              <div class="t-card__img" aria-hidden="true"></div>
+              <div class="t-quote">
+                <p class="t-quote__text">Every dish felt intentional—fresh, balanced, and beautifully plated. The service was warm without hovering.</p>
+                <div class="t-quote__meta">
+                  <div class="t-quote__name">Aubrey R.</div>
+                  <div class="t-quote__role">Regular</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="t-card">
+              <div class="t-card__img t-card__img--2" aria-hidden="true"></div>
+              <div class="t-quote">
+                <p class="t-quote__text">The menu is tight in the best way. You can tell they focus on technique, not gimmicks. Steak frites was flawless.</p>
+                <div class="t-quote__meta">
+                  <div class="t-quote__name">Mika S.</div>
+                  <div class="t-quote__role">First-time guest</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="t-card">
+              <div class="t-card__img t-card__img--3" aria-hidden="true"></div>
+              <div class="t-quote">
+                <p class="t-quote__text">We came for the mains and stayed for dessert. The crème brûlée had the perfect crackle—10/10.</p>
+                <div class="t-quote__meta">
+                  <div class="t-quote__name">Jordan K.</div>
+                  <div class="t-quote__role">Foodie</div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="t-controls">
+            <div class="t-progress" aria-hidden="true">
+              <div class="t-progress__bar" data-testimonials-progress></div>
+            </div>
+            <div class="t-arrows">
+              <button class="icon-btn" type="button" data-testimonials-prev aria-label="Previous testimonial">‹</button>
+              <button class="icon-btn" type="button" data-testimonials-next aria-label="Next testimonial">›</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" aria-label="Footer">
+    <div class="container">
+      <div class="footer__cta">
+        <div>
+          <div class="footer__ctaTitle">Explore Our French-Inspired Dishes</div>
+          <div class="footer__ctaSub">Seasonal plates, classic technique, and a wine list built for pairing.</div>
+        </div>
+        <a class="btn btn--ghost" href="#menuTitle">View Menu</a>
+      </div>
+
+      <div class="footer__grid">
+        <div class="footer__col">
+          <div class="footer__brand">Platieu</div>
+          <p class="footer__text">A modern French-inspired table with a chef-driven menu and a welcoming bar.</p>
+          <div class="social" aria-label="Social links">
+            <a class="social__link" href="#" aria-label="Instagram">IG</a>
+            <a class="social__link" href="#" aria-label="Facebook">FB</a>
+            <a class="social__link" href="#" aria-label="Twitter">X</a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <div class="footer__head">Pages</div>
+          <a class="footer__link" href="index.html">Home</a>
+          <a class="footer__link" href="menu.html">Menu</a>
+          <a class="footer__link" href="order.html">Reserve</a>
+        </div>
+
+        <div class="footer__col">
+          <div class="footer__head">Contact</div>
+          <a class="footer__link" href="mailto:hello@platieu.example">hello@platieu.example</a>
+          <a class="footer__link" href="tel:+10000000000">+1 (000) 000-0000</a>
+          <div class="footer__text">Mon–Sun: 5pm–11pm</div>
+        </div>
+
+        <div class="footer__col">
+          <div class="footer__head">Location</div>
+          <div class="footer__text">100 Market Street</div>
+          <div class="footer__text">San Francisco, CA</div>
+          <a class="footer__link" href="#top">Back to top</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__copyright">© <span id="year"></span> Platieu. All rights reserved.</div>
+        <div class="footer__watermark" aria-hidden="true">Platieu</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/menu.js"></script>
+</body>
+</html>
