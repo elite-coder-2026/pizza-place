@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Printed Receipt • Platieu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Lora", serif;
+      color: #121212;
+      background: #f3f4f6;
+      padding: 24px 16px;
+    }
+
+    .paper {
+      width: min(720px, 100%);
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .header {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .brand {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: 0.2px;
+    }
+
+    .title {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 1.15;
+    }
+
+    .desc {
+      margin: 0;
+      color: #4b5563;
+      line-height: 1.65;
+      font-size: 14px;
+      max-width: 60ch;
+    }
+
+    .rule {
+      border: 0;
+      height: 1px;
+      background: #e5e7eb;
+      margin: 18px 0 16px;
+    }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.2px;
+    }
+
+    .details {
+      margin: 0;
+      display: grid;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: baseline;
+      padding: 8px 0;
+      border-bottom: 1px dashed #e5e7eb;
+    }
+
+    .row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    dt {
+      margin: 0;
+      color: #374151;
+    }
+
+    dd {
+      margin: 0;
+      font-variant-numeric: tabular-nums;
+      color: #111827;
+      text-align: right;
+    }
+
+    .total dd {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .meta {
+      margin-top: 18px;
+      color: #6b7280;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+        color: #000000;
+      }
+
+      .paper {
+        width: auto;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      .desc {
+        color: #111111;
+      }
+
+      .rule {
+        background: #000000;
+        opacity: 0.15;
+      }
+
+      .row {
+        border-bottom-color: #000000;
+        opacity: 0.9;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="paper" aria-label="Printed receipt">
+    <header class="header">
+      <div class="brand">Platieu</div>
+      <h1 class="title">Reservation Receipt</h1>
+      <p class="desc">
+        Your reservation request was received. Keep this receipt for your records while our team reviews and confirms
+        your table.
+      </p>
+    </header>
+
+    <hr class="rule" aria-hidden="true">
+
+    <section aria-labelledby="detailsTitle">
+      <h2 class="section-title" id="detailsTitle">Detail Transaction</h2>
+
+      <dl class="details">
+        <div class="row">
+          <dt>Transaction ID</dt>
+          <dd>00100102092024</dd>
+        </div>
+        <div class="row">
+          <dt>Date</dt>
+          <dd>01.05 Am - 2 Jun 2025</dd>
+        </div>
+        <div class="row">
+          <dt>Type Services</dt>
+          <dd>Dine-In</dd>
+        </div>
+        <div class="row total">
+          <dt>Total</dt>
+          <dd>$44.22</dd>
+        </div>
+      </dl>
+    </section>
+
+    <p class="meta">
+      © Platieu. This document is provided for reference and does not guarantee a booking until confirmation is sent.
+    </p>
+  </main>
+</body>
+</html>
+
