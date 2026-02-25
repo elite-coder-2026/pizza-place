@@ -2,32 +2,423 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pizza Place</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home • Platieu</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Lora:wght@400;500;600&display=swap"
+          rel="stylesheet">
 
-	    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/design-tokens.css">
+    <link rel="stylesheet" href="css/reservation-form.css">
 </head>
-<body>
-<main class="page">
-	    <section class="page-section" aria-label="Home">
-	        <div style="width:min(720px,100%); background:rgba(1,6,20,0.78); border:1px solid rgba(255,255,255,0.08); border-radius:24px; padding:24px;">
-	            <h1 style="margin:0 0 8px; font-family:'Cormorant Garamond', serif; font-size:32px; line-height:1.15;">Pizza Place</h1>
-	            <p style="margin:0 0 16px; color:rgba(253,253,253,0.78); line-height:1.6;">
-	                Jump straight to the finished pages:
-	            </p>
-		            <div style="display:flex; flex-wrap:wrap; gap:10px;">
-		                <a href="menu.html" style="display:inline-flex; padding:10px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.18); text-decoration:none;">View Menu</a>
-		                <a href="order.html" style="display:inline-flex; padding:10px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.18); text-decoration:none;">Reserve / Order</a>
-		                <a href="cms-test.html" style="display:inline-flex; padding:10px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.18); text-decoration:none;">CMS Test</a>
-		            </div>
-		        </div>
-		    </section>
+<body class="home-page">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <nav class="nav" aria-label="Primary">
+        <div class="container nav__inner">
+            <a class="brand" href="index.html" aria-label="Platieu home" aria-current="page">
+                <img
+                        class="brand__mark"
+                        src="img/menu/logo-mark.svg"
+                        alt=""
+                        aria-hidden="true"
+                        loading="eager"
+                >
+                <span class="brand__name">Platieu</span>
+            </a>
+
+            <div class="nav__pill" role="list">
+                <a class="nav__link nav__link--active" role="article" href="index.html" aria-current="page">Home</a>
+                <a class="nav__link" role="article" href="menu.html">Menu</a>
+                <a class="nav__link" role="article" href="#story">Our Story</a>
+                <a class="nav__link" role="article" href="#location">Location</a>
+                <a class="nav__link" role="article" href="#news">News</a>
+            </div>
+
+            <a class="btn btn--primary nav__cta" href="order.html">Reserve a Seat</a>
+        </div>
+    </nav>
+
+    <div class="container hero__content">
+        <img
+                class="hero__flourish"
+                src="img/menu/flourish.svg"
+                alt=""
+                aria-hidden="true"
+                loading="eager"
+        >
+        <p class="hero__kicker">Culinary in Harmony</p>
+        <h1 class="hero__title">A Symphony of Flavors in Every Bite</h1>
+        <p class="hero__desc">
+            Seasonal ingredients, classic technique, and thoughtful hospitality — served with quiet confidence.
+        </p>
+        <div class="hero__actions">
+            <a class="btn btn--ghost" href="menu.html">View Menu</a>
+            <a class="btn btn--primary" href="order.html">Reserve a Table</a>
+        </div>
+    </div>
+</header>
+
+<main id="main">
+    <section class="section company" id="story" aria-labelledby="companyTitle">
+        <div class="container company__grid">
+            <div class="company__copy">
+                <h2 class="section__title" id="companyTitle">Our Company</h2>
+                <p class="company__desc">
+                    Platieu is a modern French-inspired restaurant built around simple principles: source well, cook
+                    with care, and
+                    welcome every guest like a regular.
+                </p>
+
+                <dl class="stats" aria-label="Company stats">
+                    <div class="stats__item">
+                        <dt class="stats__label">Years</dt>
+                        <dd class="stats__value">20+</dd>
+                    </div>
+                    <div class="stats__item">
+                        <dt class="stats__label">Awards</dt>
+                        <dd class="stats__value">15+</dd>
+                    </div>
+                    <div class="stats__item">
+                        <dt class="stats__label">Rating</dt>
+                        <dd class="stats__value">4.9/5</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="company__media" aria-label="Restaurant moments">
+                <figure class="photo photo--primary">
+                    <img class="photo__img" src="img/home/about-1.png" alt="Chef plating a dish in the kitchen"
+                         loading="lazy">
+                </figure>
+                <figure class="photo photo--secondary">
+                    <img class="photo__img" src="img/home/about-2.png" alt="Guests sharing a meal at a warmly lit table"
+                         loading="lazy">
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="section favorites" aria-labelledby="favoritesTitle">
+        <div class="container favorites__grid">
+            <header class="section__head section__head--stack favorites__head">
+                <h2 class="section__title" id="favoritesTitle">Chef’s Favorites</h2>
+                <p class="section__desc">
+                    A few standouts we keep coming back to — bright starters, refined mains, and comforting classics.
+                </p>
+            </header>
+
+            <div class="favorites__content">
+                <ul class="dish-list" aria-label="Favorite dishes">
+                    <li class="dish-card">
+                        <img class="dish-card__img" src="img/home/dish-wings.png" alt="" aria-hidden="true"
+                             loading="lazy">
+                        <div class="dish-card__body">
+                            <h3 class="dish-card__title">BBQ Chicken Wings</h3>
+                            <p class="dish-card__meta">Smoky glaze, crisp edges, citrus finish.</p>
+                        </div>
+                    </li>
+                    <li class="dish-card">
+                        <img class="dish-card__img" src="img/home/dish-feature.png" alt="" aria-hidden="true"
+                             loading="lazy">
+                        <div class="dish-card__body">
+                            <h3 class="dish-card__title">Seasonal Market Plate</h3>
+                            <p class="dish-card__meta">Local produce, bright herbs, warm vinaigrette.</p>
+                        </div>
+                    </li>
+                    <li class="dish-card">
+                        <img class="dish-card__img" src="img/home/card-1.png" alt="" aria-hidden="true" loading="lazy">
+                        <div class="dish-card__body">
+                            <h3 class="dish-card__title">Chef’s Tasting Bite</h3>
+                            <p class="dish-card__meta">Small format, big flavor — always changing.</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <figure class="feature">
+                    <img class="feature__img" src="img/home/dish-feature.png"
+                         alt="A featured dish served in a dark bowl" loading="lazy">
+                    <figcaption class="feature__caption">Today’s highlight — crafted to pair with our seasonal pours.
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials" aria-labelledby="testimonialsTitle">
+        <div class="container">
+            <header class="section__head section__head--stack">
+                <h2 class="section__title" id="testimonialsTitle">Real Talk From Real Foodies</h2>
+                <p class="section__desc">Honest words from guests who came hungry and left happy.</p>
+            </header>
+
+            <div class="testimonials__grid" role="list">
+                <article class="t-card" role="article" aria-label="Review">
+                    <div class="t-card__stars" aria-hidden="true">
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                            class="star">★</span><span class="star">★</span>
+                    </div>
+                    <p class="t-card__quote">“Every bite felt intentional. The service was warm, and the flavors were
+                        perfectly balanced.”</p>
+                    <p class="t-card__byline">— Avery M.</p>
+                </article>
+
+                <article class="t-card" role="article" aria-label="Review">
+                    <div class="t-card__stars" aria-hidden="true">
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                            class="star">★</span><span class="star">★</span>
+                    </div>
+                    <p class="t-card__quote">“The chef’s favorites list is a cheat code. We ordered two and wished we
+                        ordered three.”</p>
+                    <p class="t-card__byline">— Jordan K.</p>
+                </article>
+
+                <article class="t-card" role="article" aria-label="Review">
+                    <div class="t-card__stars" aria-hidden="true">
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                            class="star">★</span><span class="star">★</span>
+                    </div>
+                    <p class="t-card__quote">“Elegant without being fussy. A calm room, a beautiful menu, and a perfect
+                        night out.”</p>
+                    <p class="t-card__byline">— Sam R.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section reserve" id="location" aria-labelledby="reserveTitle">
+        <div class="container reserve__grid">
+            <form class="reservation-form reserve__form" data-reservation-form="true" data-endpoint="/api/reservations"
+                  novalidate>
+                <h2 class="reservation-form__title" id="reserveTitle">Reserve a Seat</h2>
+
+                <div class="reservation-form__fields">
+                    <div class="reservation-form__row">
+                        <div class="rf-field">
+                            <label class="rf-label" for="r_name">Name</label>
+                            <input class="rf-control" id="r_name" name="name" type="text" autocomplete="name"
+                                   placeholder="Your name" required>
+                        </div>
+                        <div class="rf-field">
+                            <label class="rf-label" for="r_email">Email</label>
+                            <input class="rf-control" id="r_email" name="email" type="email" autocomplete="email"
+                                   placeholder="you@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="reservation-form__row">
+                        <div class="rf-field rf-field--icon">
+                            <label class="rf-label" for="r_date">Date</label>
+                            <input class="rf-control" id="r_date" name="reservation_date" type="date" required>
+                            <span class="rf-icon-wrap" aria-hidden="true">
+                  <img class="rf-icon rf-icon--calendar" src="img/icon-calendar.svg" alt="">
+                </span>
+                        </div>
+                        <div class="rf-field rf-field--icon">
+                            <label class="rf-label" for="r_time">Time</label>
+                            <input class="rf-control" id="r_time" name="reservation_time" type="time" required>
+                            <span class="rf-icon-wrap" aria-hidden="true">
+                  <img class="rf-icon" src="img/icon-chevron-down.svg" alt="">
+                </span>
+                        </div>
+                    </div>
+
+                    <div class="reservation-form__row">
+                        <div class="rf-field">
+                            <label class="rf-label" for="r_guests">Guests</label>
+                            <input class="rf-control" id="r_guests" name="guests" type="number" min="1" max="16"
+                                   value="2" required>
+                        </div>
+                        <div class="rf-field">
+                            <label class="rf-label" for="r_phone">Phone (optional)</label>
+                            <input class="rf-control" id="r_phone" name="phone" type="tel" autocomplete="tel"
+                                   placeholder="(555) 123-4567">
+                        </div>
+                    </div>
+
+                    <div class="rf-field">
+                        <label class="rf-label" for="r_message">Message</label>
+                        <textarea class="rf-control rf-control--textarea" id="r_message" name="message"
+                                  placeholder="Dietary notes or special requests" required></textarea>
+                    </div>
+                </div>
+                <label for="reservation__hp"></label>
+                <input class="reservation-form__hp" id="reservation__hp" name="_hp" type="text" tabindex="-1" autocomplete="off">
+
+                <div class="reservation-form__consent">
+                    <label for="r_consent"></label>
+                    <input class="rf-checkbox" id="r_consent" name="consent" type="checkbox" value="yes" required>
+                    <p class="reservation-form__consent-text">
+                        I agree to the <a href="#privacy">Privacy Policy</a> and <a href="#terms">Terms of Service</a>.
+                    </p>
+                </div>
+
+                <div class="reservation-form__actions">
+                    <button class="reservation-form__submit" type="submit">Reserve a Table</button>
+                    <p class="reservation-form__status" data-reservation-status></p>
+                </div>
+            </form>
+
+            <aside class="reserve__info" aria-label="Contact and hours">
+                <h3 class="reserve__title">Craving Something Delicious?</h3>
+                <p class="reserve__desc">
+                    Join us for an intimate dining experience — book ahead for prime seating, or drop by for the bar.
+                </p>
+                <ul class="reserve__bullets">
+                    <li>Seasonal tasting options</li>
+                    <li>Wine pairings and cocktails</li>
+                    <li>Warm service, relaxed room</li>
+                </ul>
+
+                <dl class="reserve__meta">
+                    <div class="reserve__meta-item">
+                        <dt class="reserve__meta-label">Address</dt>
+                        <dd class="reserve__meta-value">123 Rue de Market, New York, NY</dd>
+                    </div>
+                    <div class="reserve__meta-item">
+                        <dt class="reserve__meta-label">Phone</dt>
+                        <dd class="reserve__meta-value"><a class="reserve__link" href="tel:+15551234567">(555)
+                            123-4567</a></dd>
+                    </div>
+                    <div class="reserve__meta-item">
+                        <dt class="reserve__meta-label">Hours</dt>
+                        <dd class="reserve__meta-value">Mon–Sun: 5pm–10pm</dd>
+                    </div>
+                </dl>
+            </aside>
+        </div>
+    </section>
+
+    <section class="section faq-section" aria-labelledby="faqTitle">
+        <div class="container">
+            <header class="section__head section__head--stack">
+                <h2 class="section__title" id="faqTitle">What’s on Your Mind?</h2>
+                <p class="section__desc">A few quick answers before you book.</p>
+            </header>
+
+            <div class="faq" aria-label="FAQ">
+                <details class="faq__item">
+                    <summary class="faq__question">Do you have vegetarian options?</summary>
+                    <div class="faq__answer">Yes — we always have seasonal vegetarian plates, and we’re happy to adjust
+                        when possible.
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">Can you accommodate allergies?</summary>
+                    <div class="faq__answer">We can accommodate many allergies. Add a note in your reservation message
+                        and we’ll confirm.
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">Is there a dress code?</summary>
+                    <div class="faq__answer">Smart casual is perfect. Come as you are — just come hungry.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="section news" id="news" aria-labelledby="newsTitle">
+        <div class="container">
+            <header class="section__head section__head--stack">
+                <h2 class="section__title" id="newsTitle">From Our Kitchen to Your Screen</h2>
+                <p class="section__desc">Behind-the-scenes clips, seasonal drops, and chef notes.</p>
+            </header>
+
+            <div class="news__grid" role="list">
+                <article class="video-card" role="article">
+                    <img class="video-card__img" src="img/home/thumb-1.png" alt="A plated dish in the kitchen"
+                         loading="lazy">
+                    <div class="video-card__body">
+                        <h3 class="video-card__title">Plating, Start to Finish</h3>
+                        <p class="video-card__meta">2 min • Chef’s process</p>
+                    </div>
+                </article>
+                <article class="video-card" role="article">
+                    <img class="video-card__img" src="img/home/thumb-2.png" alt="Fresh ingredients on a prep counter"
+                         loading="lazy">
+                    <div class="video-card__body">
+                        <h3 class="video-card__title">Market Ingredients</h3>
+                        <p class="video-card__meta">3 min • This week’s picks</p>
+                    </div>
+                </article>
+                <article class="video-card" role="article">
+                    <img class="video-card__img" src="img/home/thumb-3.png" alt="A warm dining room with guests seated"
+                         loading="lazy">
+                    <div class="video-card__body">
+                        <h3 class="video-card__title">A Night at Platieu</h3>
+                        <p class="video-card__meta">1 min • Atmosphere</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 </main>
+
+<footer class="footer" aria-label="Footer">
+    <div class="container footer__top">
+        <div class="footer__cta">
+            <div>
+                <h2 class="footer__title">Explore Our French-Inspired Dishes</h2>
+                <p class="footer__desc">Seasonal plates, thoughtful pours, and a warm table waiting for you.</p>
+            </div>
+            <a class="btn btn--primary" href="menu.html">View Menu</a>
+        </div>
+
+        <div class="footer__grid">
+            <div class="footer__brand">
+                <a class="brand brand--footer" href="index.html" aria-label="Platieu home">
+                    <img class="brand__mark" src="img/menu/logo-mark.svg" alt="" aria-hidden="true" loading="lazy">
+                    <span class="brand__name">Platieu</span>
+                </a>
+                <p class="footer__fine">
+                    A modern, French-inspired restaurant focused on seasonal ingredients and unhurried hospitality.
+                </p>
+            </div>
+
+            <nav class="footer__nav" aria-label="Footer links">
+                <h3 class="footer__head">Explore</h3>
+                <a class="footer__link" href="#story">Our Story</a>
+                <a class="footer__link" href="menu.html">Menu</a>
+                <a class="footer__link" href="#location">Location</a>
+                <a class="footer__link" href="#news">News</a>
+            </nav>
+
+            <div class="footer__nav">
+                <h3 class="footer__head">Contact</h3>
+                <a class="footer__link" href="tel:+15551234567">(555) 123-4567</a>
+                <a class="footer__link" href="mailto:hello@platieu.example">hello@platieu.example</a>
+                <p class="footer__fine">123 Rue de Market, New York, NY</p>
+                <div class="social" aria-label="Social links">
+                    <a class="social__link" href="#" aria-label="Facebook">f</a>
+                    <a class="social__link" href="#" aria-label="Instagram">in</a>
+                    <a class="social__link" href="#" aria-label="X">x</a>
+                    <a class="social__link" href="#" aria-label="WhatsApp">wa</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p class="footer__copyright">©Platieu 2025. All rights reserved.</p>
+        <div class="footer__links">
+          <a class="footer__link footer__link--inline" href="#" id="privacy">Privacy Policy</a>
+          <span class="footer__dot" aria-hidden="true">•</span>
+          <a class="footer__link footer__link--inline" href="#" id="terms">Terms of Services</a>
+        </div>
+            <div class="footer__watermark" aria-hidden="true">Platieu</div>
+        </div>
+    </div>
+</footer>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/axios/dist/axios.min.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/reservation-form.js"></script>
 </body>
 </html>
