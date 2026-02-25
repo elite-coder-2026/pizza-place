@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "0.0.4",
+  "description": "simple backend for a local pizza shop'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elite-coder-2026/pizza-place.git"
+  },
+  "author": "darrell parkhouse",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elite-coder-2026/pizza-place/issues"
+  },
+  "homepage": "https://github.com/elite-coder-2026/pizza-place#readme"
+}
