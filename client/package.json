@@ -4,6 +4,7 @@
   "description": "simple pizza resturant for a potential client",
   "main": "app.js",
   "scripts": {
+    "diagram": "node scripts/render-mermaid.mjs",
     "test": "n/a"
   },
   "repository": {
@@ -25,5 +26,8 @@
     "axios": "^1.13.5",
     "esm": "^3.2.25",
     "jquery": "^4.0.0"
+  },
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "^11.12.0"
   }
 }
