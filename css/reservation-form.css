@@ -118,8 +118,11 @@
 }
 
 .rf-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   background: transparent;
+  background-image: none;
   border: 0;
   color: var(--rf-text);
   font: inherit;
@@ -128,8 +131,12 @@
   width: 100%;
 }
 
+.rf-select::-ms-expand {
+  display: none;
+}
+
 .rf-icon {
-  display: inline-block;
+  display: block;
   height: 18px;
   width: 18px;
 }
@@ -155,6 +162,23 @@
 
 .rf-field--icon .rf-control {
   padding-right: 28px;
+}
+
+/* Hide native date/time picker icons so our SVG stays 1:1. */
+.rf-control[type="date"]::-webkit-calendar-picker-indicator,
+.rf-control[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.rf-control[type="date"]::-webkit-clear-button,
+.rf-control[type="time"]::-webkit-clear-button {
+  display: none;
+}
+
+.rf-control[type="date"]::-webkit-inner-spin-button,
+.rf-control[type="time"]::-webkit-inner-spin-button {
+  display: none;
 }
 
 .reservation-form__consent {
