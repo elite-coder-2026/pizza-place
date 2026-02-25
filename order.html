@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Pizza</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/order.css">
+</head>
+<body>
+<main class="page">
+  <form id="orderForm" class="order" data-order-form="true" data-endpoint="/api/orders" novalidate>
+    <header class="order__header">
+      <h1 class="order__title">Order Pizza</h1>
+      <p class="order__subtitle">Build your pizzas, then send the order.</p>
+    </header>
+
+    <section class="order__section">
+      <div class="order__section-title">Your Pizzas (<span data-order-count>0</span>)</div>
+
+      <div data-order-items class="order__items"></div>
+
+      <div class="order__row">
+        <button class="order__btn order__btn--secondary" data-add-item type="button">Add another pizza</button>
+        <div class="order__total">
+          Total: <strong data-order-total>$0.00</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="order__section">
+      <div class="order__grid2">
+        <div class="order__field">
+          <label class="order__label" for="customer_name">Name</label>
+          <input class="order__input" id="customer_name" name="customer_name" type="text" autocomplete="name" required>
+        </div>
+        <div class="order__field">
+          <label class="order__label" for="email">Email</label>
+          <input class="order__input" id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+      </div>
+
+      <div class="order__grid2">
+        <div class="order__field">
+          <label class="order__label" for="phone">Phone</label>
+          <input class="order__input" id="phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div class="order__field">
+          <label class="order__label" for="fulfillment">Fulfillment</label>
+          <select class="order__input" id="fulfillment" name="fulfillment" required>
+            <option value="pickup" selected>Pickup</option>
+            <option value="delivery">Delivery</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="order__grid2" data-delivery-only style="display:none;">
+        <div class="order__field">
+          <label class="order__label" for="address_1">Address</label>
+          <input class="order__input" id="address_1" name="address_1" type="text" autocomplete="address-line1" data-delivery-required>
+        </div>
+        <div class="order__field">
+          <label class="order__label" for="city">City</label>
+          <input class="order__input" id="city" name="city" type="text" autocomplete="address-level2" data-delivery-required>
+        </div>
+        <div class="order__field">
+          <label class="order__label" for="zip">ZIP</label>
+          <input class="order__input" id="zip" name="zip" type="text" autocomplete="postal-code" data-delivery-required>
+        </div>
+      </div>
+    </section>
+
+    <section class="order__section">
+      <div class="order__field">
+        <label class="order__label" for="notes">Notes</label>
+        <textarea class="order__input order__input--textarea" id="notes" name="notes" rows="3" placeholder="Allergies, no-contact delivery, etc."></textarea>
+      </div>
+
+      <div class="order__consent">
+        <input id="terms" type="checkbox" name="terms" required>
+        <label for="terms">I agree to the terms.</label>
+      </div>
+
+      <div class="order__actions">
+        <button class="order__btn" type="submit">Place order</button>
+        <p class="order__status" data-order-status aria-live="polite"></p>
+      </div>
+    </section>
+
+    <template id="orderItemTemplate">
+      <div class="order-item" data-order-item>
+        <div class="order-item__top">
+          <div class="order-item__title">Pizza</div>
+          <button class="order-item__remove" data-remove-item type="button">Remove</button>
+        </div>
+
+        <div class="order-item__grid">
+          <div class="order__field">
+            <label class="order__label">Size</label>
+            <select class="order__input" name="pizza_size">
+              <option value="sm">Small</option>
+              <option value="md" selected>Medium</option>
+              <option value="lg">Large</option>
+            </select>
+          </div>
+
+          <div class="order__field">
+            <label class="order__label">Crust</label>
+            <select class="order__input" name="pizza_crust">
+              <option value="regular" selected>Regular</option>
+              <option value="thin">Thin</option>
+              <option value="gluten_free">Gluten free</option>
+            </select>
+          </div>
+
+          <div class="order__field">
+            <label class="order__label">Qty</label>
+            <input class="order__input" name="pizza_qty" type="number" min="1" value="1">
+          </div>
+        </div>
+
+        <fieldset class="order-item__toppings">
+          <legend class="order-item__legend">Toppings</legend>
+          <label class="order-item__check"><input type="checkbox" name="pizza_toppings[]" value="pepperoni"> Pepperoni</label>
+          <label class="order-item__check"><input type="checkbox" name="pizza_toppings[]" value="mushrooms"> Mushrooms</label>
+          <label class="order-item__check"><input type="checkbox" name="pizza_toppings[]" value="onions"> Onions</label>
+          <label class="order-item__check"><input type="checkbox" name="pizza_toppings[]" value="olives"> Olives</label>
+          <label class="order-item__check"><input type="checkbox" name="pizza_toppings[]" value="extra_cheese"> Extra cheese</label>
+        </fieldset>
+      </div>
+    </template>
+  </form>
+</main>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/axios/dist/axios.min.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/order-form.js"></script>
+</body>
+</html>
